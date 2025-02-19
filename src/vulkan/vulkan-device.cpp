@@ -533,6 +533,27 @@ namespace nvrhi::vulkan
         }
     }
 
+    SamplerFeedbackTextureHandle Device::createSamplerFeedbackTexture(ITexture* pairedTexture, const SamplerFeedbackTextureDesc& desc)
+    {
+        (void)pairedTexture;
+        (void)desc;
+
+        utils::NotSupported();
+
+        return nullptr;
+    }
+
+    SamplerFeedbackTextureHandle Device::createSamplerFeedbackForNativeTexture(ObjectType objectType, Object texture, ITexture* pairedTexture)
+    {
+        (void)objectType;
+        (void)texture;
+        (void)pairedTexture;
+
+        utils::NotSupported();
+
+        return nullptr;
+    }
+
     HeapHandle Device::createHeap(const HeapDesc& d)
     {
         vk::MemoryRequirements memoryRequirements;
