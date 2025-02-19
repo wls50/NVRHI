@@ -37,9 +37,9 @@ namespace nvrhi::vulkan
     {
 #if defined(NVRHI_SHARED_LIBRARY_BUILD)
 #if VK_HEADER_VERSION >= 301
-        vk::detail::DynamicLoader dl;
+        vk::detail::DynamicLoader dl(desc.vulkanLibraryName);
 #else
-        vk::DynamicLoader dl;
+        vk::DynamicLoader dl(desc.vulkanLibraryName);
 #endif
         const PFN_vkGetInstanceProcAddr vkGetInstanceProcAddr =   // NOLINT(misc-misplaced-const)
             dl.getProcAddress<PFN_vkGetInstanceProcAddr>("vkGetInstanceProcAddr");
